@@ -1,0 +1,40 @@
+/dev/xvdo1: (g=0): rw=randrw, bs=512K-512K/512K-512K/512K-512K, ioengine=libaio, iodepth=64
+fio-2.0.13
+Starting 1 process
+
+/dev/xvdo1: (groupid=0, jobs=1): err= 0: pid=26957: Sun Jun 29 05:23:26 2014
+  read : io=1857.6MB, bw=63182KB/s, iops=123 , runt= 30105msec
+    slat (usec): min=35 , max=134249 , avg=6562.67, stdev=18832.76
+    clat (msec): min=27 , max=701 , avg=408.20, stdev=94.15
+     lat (msec): min=157 , max=701 , avg=414.76, stdev=95.22
+    clat percentiles (msec):
+     |  1.00th=[  210],  5.00th=[  225], 10.00th=[  245], 20.00th=[  338],
+     | 30.00th=[  379], 40.00th=[  400], 50.00th=[  424], 60.00th=[  449],
+     | 70.00th=[  465], 80.00th=[  482], 90.00th=[  510], 95.00th=[  537],
+     | 99.00th=[  586], 99.50th=[  611], 99.90th=[  660], 99.95th=[  668],
+     | 99.99th=[  701]
+    bw (KB/s)  : min=45896, max=112881, per=99.49%, avg=62858.66, stdev=13943.72
+  write: io=473088KB, bw=15715KB/s, iops=30 , runt= 30105msec
+    slat (usec): min=60 , max=134452 , avg=6129.40, stdev=17653.36
+    clat (msec): min=193 , max=656 , avg=406.50, stdev=94.86
+     lat (msec): min=193 , max=656 , avg=412.63, stdev=95.68
+    clat percentiles (msec):
+     |  1.00th=[  206],  5.00th=[  227], 10.00th=[  247], 20.00th=[  330],
+     | 30.00th=[  379], 40.00th=[  400], 50.00th=[  416], 60.00th=[  441],
+     | 70.00th=[  465], 80.00th=[  486], 90.00th=[  515], 95.00th=[  545],
+     | 99.00th=[  586], 99.50th=[  611], 99.90th=[  660], 99.95th=[  660],
+     | 99.99th=[  660]
+    bw (KB/s)  : min= 7327, max=39697, per=98.72%, avg=15512.41, stdev=5579.77
+    lat (msec) : 50=0.02%, 250=10.65%, 500=76.33%, 750=13.00%
+  cpu          : usr=0.56%, sys=0.58%, ctx=1755, majf=0, minf=24
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.2%, 16=0.3%, 32=0.7%, >=64=98.6%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued    : total=r=3715/w=924/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+   READ: io=1857.6MB, aggrb=63181KB/s, minb=63181KB/s, maxb=63181KB/s, mint=30105msec, maxt=30105msec
+  WRITE: io=473088KB, aggrb=15714KB/s, minb=15714KB/s, maxb=15714KB/s, mint=30105msec, maxt=30105msec
+
+Disk stats (read/write):
+  xvdo: ios=44820/11016, merge=0/0, ticks=3419455/860795, in_queue=4285716, util=100.00%

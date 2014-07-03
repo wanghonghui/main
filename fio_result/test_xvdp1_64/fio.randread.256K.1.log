@@ -1,0 +1,28 @@
+/dev/xvdp1: (g=0): rw=randread, bs=256K-256K/256K-256K/256K-256K, ioengine=libaio, iodepth=64
+fio-2.0.13
+Starting 1 process
+
+/dev/xvdp1: (groupid=0, jobs=1): err= 0: pid=28932: Sun Jun 29 05:49:25 2014
+  read : io=1754.8MB, bw=59548KB/s, iops=232 , runt= 30175msec
+    slat (usec): min=20 , max=133230 , avg=4278.31, stdev=17858.40
+    clat (msec): min=27 , max=649 , avg=270.75, stdev=74.94
+     lat (msec): min=27 , max=652 , avg=275.03, stdev=75.25
+    clat percentiles (msec):
+     |  1.00th=[  114],  5.00th=[  198], 10.00th=[  202], 20.00th=[  206],
+     | 30.00th=[  210], 40.00th=[  225], 50.00th=[  289], 60.00th=[  297],
+     | 70.00th=[  302], 80.00th=[  310], 90.00th=[  351], 95.00th=[  404],
+     | 99.00th=[  506], 99.50th=[  523], 99.90th=[  611], 99.95th=[  644],
+     | 99.99th=[  652]
+    bw (KB/s)  : min=51296, max=71956, per=99.53%, avg=59265.31, stdev=2964.47
+    lat (msec) : 50=0.81%, 100=0.04%, 250=42.54%, 500=55.38%, 750=1.23%
+  cpu          : usr=0.05%, sys=0.77%, ctx=1346, majf=0, minf=4119
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.2%, 32=0.5%, >=64=99.1%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued    : total=r=7019/w=0/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+   READ: io=1754.8MB, aggrb=59548KB/s, minb=59548KB/s, maxb=59548KB/s, mint=30175msec, maxt=30175msec
+
+Disk stats (read/write):
+  xvdp: ios=42100/0, merge=0/0, ticks=4306391/0, in_queue=4308598, util=99.77%

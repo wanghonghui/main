@@ -1,0 +1,40 @@
+/dev/xvdp1: (g=0): rw=randrw, bs=16K-16K/16K-16K/16K-16K, ioengine=libaio, iodepth=64
+fio-2.0.13
+Starting 1 process
+
+/dev/xvdp1: (groupid=0, jobs=1): err= 0: pid=29113: Sun Jun 29 05:59:33 2014
+  read : io=442048KB, bw=14725KB/s, iops=920 , runt= 30021msec
+    slat (usec): min=7 , max=204 , avg= 9.18, stdev= 1.91
+    clat (msec): min=2 , max=45 , avg=20.35, stdev= 6.06
+     lat (msec): min=2 , max=45 , avg=20.36, stdev= 6.06
+    clat percentiles (usec):
+     |  1.00th=[ 7392],  5.00th=[11328], 10.00th=[12352], 20.00th=[14272],
+     | 30.00th=[16320], 40.00th=[18304], 50.00th=[20608], 60.00th=[22400],
+     | 70.00th=[24448], 80.00th=[26496], 90.00th=[28288], 95.00th=[29824],
+     | 99.00th=[31616], 99.50th=[32384], 99.90th=[34048], 99.95th=[35072],
+     | 99.99th=[42752]
+    bw (KB/s)  : min=13280, max=23680, per=99.97%, avg=14719.23, stdev=1316.56
+  write: io=1020.1MB, bw=34825KB/s, iops=2176 , runt= 30021msec
+    slat (usec): min=8 , max=163 , avg=10.70, stdev= 1.80
+    clat (msec): min=1 , max=47 , avg=20.78, stdev= 6.05
+     lat (msec): min=1 , max=47 , avg=20.79, stdev= 6.05
+    clat percentiles (usec):
+     |  1.00th=[ 7968],  5.00th=[11712], 10.00th=[12736], 20.00th=[14656],
+     | 30.00th=[16768], 40.00th=[18816], 50.00th=[20864], 60.00th=[22912],
+     | 70.00th=[24704], 80.00th=[26752], 90.00th=[28800], 95.00th=[30080],
+     | 99.00th=[32384], 99.50th=[33024], 99.90th=[35072], 99.95th=[36096],
+     | 99.99th=[40192]
+    bw (KB/s)  : min=32725, max=59168, per=99.99%, avg=34820.62, stdev=3259.37
+    lat (msec) : 2=0.01%, 4=0.08%, 10=1.50%, 20=45.21%, 50=53.21%
+  cpu          : usr=2.02%, sys=6.07%, ctx=86020, majf=0, minf=23
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=99.9%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued    : total=r=27628/w=65342/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+   READ: io=442048KB, aggrb=14724KB/s, minb=14724KB/s, maxb=14724KB/s, mint=30021msec, maxt=30021msec
+  WRITE: io=1020.1MB, aggrb=34824KB/s, minb=34824KB/s, maxb=34824KB/s, mint=30021msec, maxt=30021msec
+
+Disk stats (read/write):
+  xvdp: ios=27578/65064, merge=6/43, ticks=559992/1352026, in_queue=1912703, util=99.80%

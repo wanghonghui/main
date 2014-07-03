@@ -1,0 +1,41 @@
+/dev/xvdo1: (g=0): rw=randrw, bs=16K-16K/16K-16K/16K-16K, ioengine=libaio, iodepth=64
+fio-2.0.13
+Starting 1 process
+
+/dev/xvdo1: (groupid=0, jobs=1): err= 0: pid=31463: Sun Jun 29 06:46:01 2014
+  read : io=115408KB, bw=3819.9KB/s, iops=238 , runt= 30213msec
+    slat (usec): min=7 , max=115 , avg= 9.96, stdev= 1.48
+    clat (msec): min=25 , max=913 , avg=215.29, stdev=105.66
+     lat (msec): min=25 , max=913 , avg=215.30, stdev=105.66
+    clat percentiles (msec):
+     |  1.00th=[  114],  5.00th=[  117], 10.00th=[  127], 20.00th=[  141],
+     | 30.00th=[  153], 40.00th=[  167], 50.00th=[  184], 60.00th=[  200],
+     | 70.00th=[  223], 80.00th=[  265], 90.00th=[  355], 95.00th=[  449],
+     | 99.00th=[  603], 99.50th=[  668], 99.90th=[  807], 99.95th=[  857],
+     | 99.99th=[  914]
+    bw (KB/s)  : min= 2437, max= 4160, per=99.47%, avg=3798.68, stdev=243.10
+  write: io=28416KB, bw=963094 B/s, iops=58 , runt= 30213msec
+    slat (usec): min=8 , max=21 , avg=12.20, stdev= 0.96
+    clat (msec): min=76 , max=923 , avg=214.17, stdev=107.54
+     lat (msec): min=76 , max=923 , avg=214.19, stdev=107.54
+    clat percentiles (msec):
+     |  1.00th=[  114],  5.00th=[  118], 10.00th=[  126], 20.00th=[  141],
+     | 30.00th=[  153], 40.00th=[  167], 50.00th=[  184], 60.00th=[  200],
+     | 70.00th=[  221], 80.00th=[  258], 90.00th=[  351], 95.00th=[  453],
+     | 99.00th=[  627], 99.50th=[  693], 99.90th=[  824], 99.95th=[  922],
+     | 99.99th=[  922]
+    bw (KB/s)  : min=  608, max= 1408, per=99.59%, avg=936.18, stdev=164.87
+    lat (msec) : 50=0.09%, 100=0.17%, 250=77.36%, 500=19.17%, 750=3.01%
+    lat (msec) : 1000=0.20%
+  cpu          : usr=0.00%, sys=0.83%, ctx=8991, majf=0, minf=24
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.2%, 32=0.4%, >=64=99.3%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued    : total=r=7213/w=1776/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+   READ: io=115408KB, aggrb=3819KB/s, minb=3819KB/s, maxb=3819KB/s, mint=30213msec, maxt=30213msec
+  WRITE: io=28416KB, aggrb=940KB/s, minb=940KB/s, maxb=940KB/s, mint=30213msec, maxt=30213msec
+
+Disk stats (read/write):
+  xvdo: ios=7307/1773, merge=467/0, ticks=1558338/378325, in_queue=1941037, util=100.00%
