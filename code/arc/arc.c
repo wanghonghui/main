@@ -25,12 +25,14 @@ typedef struct arc_cache {
     uint64_t            arc_c;
 } arc_cache_t;
 
+#define ARC_HASH_SIZE               ((1024ULL * 1024 * 1024 * 1024 * 2) / (64 * 1024) * 2)
+
 #define MIN(a, b)                   ((a) < (b) ? (a): (b))                   
 #define MAX(a, b)                   ((a) > (b) ? (a): (b))                   
 
 #define ARC_P_MIN_SHIFT             4
 #define ARC_MINTIME                 62
-#define ARC_CACHE_LEN_MAX           (1024 *1024)
+#define ARC_CACHE_LEN_MAX           (1024 * 1024)
 
 #define ARC_IN_HASH_TABLE           (1 << 1)
 #define ARC_BUF_IN_USE              (1 << 2)
@@ -179,6 +181,9 @@ static void arc_access(arc_cache_t *arc_cache, arc_buf_hdr_t *buf, int32_t delta
                 arc_evict(arc_cache->arc_hash, mfu_ghost, mfu, delta);
         arc_state_change(mfu, buf, delta);
     }
+    printf("mru :%lu, mru_ghost:%lu, mfu:%lu, mfu_ghost:%lu\n", 
+            mru->arcs_size, mru_ghost->arcs_size, 
+            mfu->arcs_size, mfu_ghost->arcs_size);
 
 #undef L1_SIZE
 #undef L2_SIZE
@@ -306,7 +311,7 @@ cache_t *arc_cache_init(cache_param_t *param)
     arc_hash_t          *arc_hash = NULL; 
     uint64_t            arc_size = 1ULL;
 
-    if(param == NULL || param->cache_size < 1024*1024*512)
+    if (param == NULL || param->cache_size < 1024*1024*1)
         return NULL;
     while (arc_size < (uint64_t)param->cache_size)
         arc_size <<= 1;
@@ -315,7 +320,7 @@ cache_t *arc_cache_init(cache_param_t *param)
         arc_cache = malloc(sizeof(arc_cache_t));
         if (arc_cache == NULL)
             break;
-        arc_hash = arc_hash_init(param->cache_size>>1);
+        arc_hash = arc_hash_init(ARC_HASH_SIZE);
         if (arc_hash == NULL) 
             break;
         arc_cache->cache.ops = &arc_ops;

@@ -7,7 +7,6 @@
 
 TAILQ_HEAD(arc_state_list, arc_buf_hdr);
 
-
 typedef struct arc_state {
     uint64_t                arcs_size;
     struct arc_state_list   arcs_list;

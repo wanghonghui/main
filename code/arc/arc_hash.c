@@ -21,7 +21,7 @@
   c ^= b; c -= ROT(b,24); \
 }
 
-arc_hash_t *arc_hash_init(uint32_t size) 
+arc_hash_t *arc_hash_init(uint64_t size) 
 {
     arc_hash_t *arc_hash_table;
 
@@ -46,6 +46,7 @@ arc_hash_t *arc_hash_init(uint32_t size)
         memset(arc_hash_table->ht_table, 0, arc_hash_table->ht_size * sizeof (void*));
         break; 
     }
+    return arc_hash_table;
 }
 
 void arc_hash_fini(arc_hash_t **arc_hash_table) 
@@ -86,6 +87,7 @@ arc_buf_hdr_t *arc_hash_insert(arc_hash_t *arc_hash_table, arc_buf_hdr_t *buf)
 {
     arc_buf_hdr_t *fbuf;
     uint64_t idx = hash(buf->b_disk, buf->b_block) & arc_hash_table->ht_mask;
+    printf("hash idx:%lu\n", idx);
 
     for (fbuf = arc_hash_table->ht_table[idx]; fbuf != NULL; fbuf = fbuf->b_hash_next) {
         if(fbuf->b_disk == buf->b_disk && fbuf->b_block == buf->b_block)
